@@ -6,9 +6,10 @@ Expands on [this initial tutorial](https://docs.microsoft.com/en-us/learn/module
 
 1. Install .NET 6.0
 2. Install postgres and run [the postgres setup file](./setup-postgres.psql) to configure a database with a user.
-3. Migrate the database with `dotnet ef database update`
-4. `dotnet run` in project folder
-5. View the API documentation at [https://localhost:7053/swagger](https://localhost:7053/swagger) or [http://localhost:5059/swagger](http://localhost:5059/swagger)
+3. Install dotnet local tools with `dotnet tool restore`
+4. Migrate the database with `dotnet ef database update`
+5. `dotnet run` in project folder
+6. View the API documentation at [https://localhost:7053/swagger](https://localhost:7053/swagger) or [http://localhost:5059/swagger](http://localhost:5059/swagger)
 
 Note that I tried to get docker to work but was having issues, mainly with the ssl certificates but http also didn't work...
 
