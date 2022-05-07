@@ -3,6 +3,21 @@ using ContosoPizza.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.WithOrigins(
+                "https://localhost:7053",
+                "http://localhost:3000",
+                "http://localhost:5059"
+            );
+            policy.AllowAnyMethod();
+            policy.AllowAnyHeader();
+        });
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -27,6 +42,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.UseAuthorization();
 
