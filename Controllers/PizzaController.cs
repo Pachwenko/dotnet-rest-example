@@ -15,10 +15,20 @@ public class PizzaController : ControllerBase
 
     // GET all action
     [HttpGet]
-    public ActionResult<List<Pizza>> GetAll() {
+    public ActionResult<List<Pizza>> GetAll()
+    {
         // TODO: figure out how to fix this warning?
         // returns a 404 if the database is empty
-        return this._context.Pizzas.Select(p => new Pizza {
+    
+        // check if _context.Pizzas is null before querying
+        if (_context.Pizzas == null)
+        {
+            // return empty list
+            return new ActionResult<List<Pizza>>(new List<Pizza>());
+        }
+
+        return _context.Pizzas.Select(p => new Pizza
+        {
             Id = p.Id,
             Name = p.Name,
             IsGlutenFree = p.IsGlutenFree,
