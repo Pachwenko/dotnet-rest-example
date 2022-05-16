@@ -8,11 +8,12 @@ Expands on [this initial tutorial](https://docs.microsoft.com/en-us/learn/module
 2. Install postgres and run [the postgres setup file](./setup-postgres.psql) to configure the database and user.
     - If you are using Windows the command is `'C:\Program Files\PostgreSQL\14\bin\psql' -p 5433 -U root -f .\setup-postgres.psql`
 	- On mac/linux the command is `sudo -u postgres psql -f setup-postgres.psql`
-3. Install dotnet packages and local tools with `dotnet restore` and `dotnet tool restore`
-4. Migrate the database with `dotnet ef database update`
-    - This will create the database and tables if they don't exist
-5. `dotnet watch` in project folder to hot reload whenever changes are made, else use `dotnet run`
-6. View the API documentation at [https://localhost:7053/swagger](https://localhost:7053/swagger) or [http://localhost:5059/swagger](http://localhost:5059/swagger)
+3. In the `src\SpookyRentals` folderL
+    1. Install dotnet packages and local tools with `dotnet restore` and `dotnet tool restore`
+    2. Migrate the database with `dotnet ef database update`
+        - This will create the database and tables if they don't exist
+    3. Run the `dotnet watch` command to hot reload whenever changes are made, else use `dotnet run`
+    4. View the API documentation (if it didn't automatically open) at [https://localhost:7053/swagger](https://localhost:7053/swagger) or [http://localhost:5059/swagger](http://localhost:5059/swagger)
 
 ### Helpful Stuff
 
