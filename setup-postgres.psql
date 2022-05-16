@@ -1,3 +1,5 @@
 CREATE DATABASE "dotnet-rest-example";
-CREATE USER pizzauser WITH ENCRYPTED PASSWORD "password";
+CREATE DATABASE "dotnet-rest-example-tests";
+CREATE ROLE pizzauser LOGIN SUPERUSER PASSWORD 'password';
 GRANT ALL PRIVILEGES ON DATABASE "dotnet-rest-example" TO pizzauser;
+GRANT ALL PRIVILEGES ON DATABASE "dotnet-rest-example-tests" TO pizzauser;

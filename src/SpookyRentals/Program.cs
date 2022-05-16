@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using ContosoPizza.Models;
+using SpookyRentals.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +23,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddControllers();
 
 // Set up the database connection using Npgsql
-builder.Services.AddDbContext<PizzaDataContext>(options =>
+builder.Services.AddDbContext<SpookyRentalsContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("PizzasDb"));
 });
@@ -50,3 +50,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+public partial class Program { }
