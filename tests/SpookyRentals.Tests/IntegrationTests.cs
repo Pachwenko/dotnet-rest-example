@@ -6,8 +6,8 @@ namespace Tests;
 
 /// <summary>
 /// Test against the Rentals API
-/// Note that tests in a class do NOT run in parallel. In order to specify which tests run in parallel we specify the collection with [Collection("Transactional Tests")]
-///     this automatically inherits from and sets up the TransactionalTestsCollection
+/// Note that tests in a class do NOT run in parallel. Additionally, we specify that tests can't run in parallel along with any other test marked with [Collection("Transactional Tests")]
+///     this automatically inherits from and sets up the TransactionalTestsCollection for us
 ///
 /// These tests operate at the highest level. They are also slower than a Unit test
 ///     Read more about the different kinds of tests here https://docs.microsoft.com/en-us/ef/core/testing/
